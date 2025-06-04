@@ -16,7 +16,7 @@ try {
 }
 
 ini_set('memory_limit', '-1');
-include 'database.php';
+include '../database.php';
 
 ?>
 
