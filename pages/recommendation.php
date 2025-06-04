@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Spotify OLAP</title>
+  <title>Recommendations</title>
 
   <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -13,7 +13,7 @@
 <body class="bg-gray-50 font-sans">
   <div class="max-w-7xl mx-auto px-4 py-6">
     <!-- Page Title -->
-    <h1 class="text-3xl font-bold text-gray-800 mb-6">Spotify OLAP Dashboard</h1>
+    <h1 class="text-3xl font-bold text-gray-800 mb-6">Get personalized recommendations</h1>
 
     <div class="grid grid-cols-12 gap-6">
       <!-- Sidebar Filters -->
@@ -85,7 +85,7 @@
       </aside>
 
       <!-- Main Content -->
-      <main class="col-span-9 space-y-6">
+      <section class="col-span-9 space-y-6">
         <!-- KPIs (Reflect Filtered Results) -->
         <div class="grid grid-cols-3 gap-4">
           <div class="bg-white p-4 rounded-2xl shadow-md">
@@ -93,12 +93,12 @@
             <p class="text-2xl font-bold text-blue-600">128</p>
           </div>
           <div class="bg-white p-4 rounded-2xl shadow-md">
-            <p class="text-sm text-gray-500">Avg. Energy (Filtered)</p>
+            <p class="text-sm text-gray-500">Avg. Energy</p>
             <p class="text-2xl font-bold text-indigo-600">75</p>
           </div>
           <div class="bg-white p-4 rounded-2xl shadow-md">
-            <p class="text-sm text-gray-500">% Tagged “Good for Party”</p>
-            <p class="text-2xl font-bold text-pink-500">42%</p>
+            <p class="text-sm text-gray-500">Best Activity</p>
+            <p class="text-2xl font-bold text-pink-500">Driving</p>
           </div>
         </div>
 
@@ -108,57 +108,14 @@
             Top 5 Recommended Songs <span class="text-sm text-gray-500">(based on filters)</span>
           </h2>
           <ul class="space-y-2">
-            <li class="bg-gray-100 p-3 rounded">🎧 <strong>Song Title</strong> - Artist (Score: 0.97)</li>
+            <li class="bg-gray-100 p-3 rounded">🎧 <strong>Song Title</strong> - Artist</li>
             <li class="bg-gray-100 p-3 rounded">🎧 Song 2 - Artist</li>
             <li class="bg-gray-100 p-3 rounded">🎧 Song 3 - Artist</li>
             <li class="bg-gray-100 p-3 rounded">🎧 Song 4 - Artist</li>
             <li class="bg-gray-100 p-3 rounded">🎧 Song 5 - Artist</li>
           </ul>
         </div>
-
-        <!-- Activity-based Genre Ranking -->
-        <div class="bg-white p-6 rounded-2xl shadow-md">
-          <h2 class="text-xl font-semibold mb-4">
-            Top Genres by Activity <span class="text-sm text-gray-500">(based on all songs)</span>
-          </h2>
-          <div class="h-64 bg-gray-100 rounded flex items-center justify-center text-gray-400">[Horizontal Bar Chart]</div>
-        </div>
-
-        <!-- Explicit vs Non-explicit Emotion -->
-        <div class="bg-white p-6 rounded-2xl shadow-md">
-          <h2 class="text-xl font-semibold mb-4">
-            Explicit vs Non-Explicit Emotion Comparison <span class="text-sm text-gray-500">(based on all songs)</span>
-          </h2>
-          <div class="h-64 bg-gray-100 rounded flex items-center justify-center text-gray-400">[Grouped Bar Chart]</div>
-        </div>
-
-        <!-- Predicted Genres by Activity -->
-        <div class="bg-white p-6 rounded-2xl shadow-md">
-          <h2 class="text-xl font-semibold mb-4">
-            Predicted Genres for Activity <span class="text-sm text-gray-500">(based on all songs)</span>
-          </h2>
-          <div class="h-64 bg-gray-100 rounded flex items-center justify-center text-gray-400">[Prediction Output]</div>
-        </div>
-
-        <!-- Factors for Activity Suitability -->
-        <div class="bg-white p-6 rounded-2xl shadow-md">
-          <h2 class="text-xl font-semibold mb-4">
-            Factors that Make Songs Suitable for Specific Activities <span class="text-sm text-gray-500">(based on all songs)</span>
-          </h2>
-          <div class="h-64 bg-gray-100 rounded flex items-center justify-center text-gray-400">
-            [Radar Chart or Feature Importance Visualization]
-          </div>
-        </div>
-
-
-        <!-- Duration Impact -->
-        <div class="bg-white p-6 rounded-2xl shadow-md">
-          <h2 class="text-xl font-semibold mb-4">
-            Duration vs Popularity & Energy <span class="text-sm text-gray-500">(based on all songs)</span>
-          </h2>
-          <div class="h-64 bg-gray-100 rounded flex items-center justify-center text-gray-400">[Boxplot or Dual Bar]</div>
-        </div>
-      </main>
+      </section>
     </div>
   </div>
 
