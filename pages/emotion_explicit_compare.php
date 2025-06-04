@@ -117,6 +117,24 @@ while ($row = mysqli_fetch_assoc($result)) {
       </table>
     </div>
   </div>
+
+  <!-- Custom JS -->
+  <script>
+    const dropdownBtn = document.getElementById('dropdownBtn');
+    const dropdownMenu = document.getElementById('dropdownMenu');
+
+    dropdownBtn.addEventListener('click', (e) => {
+      e.stopPropagation(); // prevent event from bubbling to document
+      dropdownMenu.classList.toggle('hidden');
+    });
+
+    // Close dropdown when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!dropdownMenu.contains(e.target) && !dropdownBtn.contains(e.target)) {
+        dropdownMenu.classList.add('hidden');
+      }
+    });
+  </script>
 </body>
 
 </html>
