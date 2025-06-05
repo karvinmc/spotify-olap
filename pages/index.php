@@ -1,3 +1,9 @@
+<?php
+include '../includes/app.php';
+include '../includes/database.php';
+include '../includes/mongodb.php';?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,54 +15,6 @@
 </head>
 
 <body class="bg-gray-100 text-gray-800 font-sans">
-
-  <!-- Navbar -->
-  <nav class="bg-white shadow px-6 py-4">
-    <div class="max-w-7xl mx-auto flex justify-center items-center">
-      <ul class="flex gap-6 items-center relative">
-        <li>
-          <a href="/" class="text-gray-700 font-medium px-4 py-2 rounded hover:bg-gray-100 transition">
-            Home
-          </a>
-        </li>
-        <li class="relative">
-          <button id="dropdownBtn" class="flex items-center gap-1 text-gray-700 font-medium px-4 py-2 rounded hover:bg-gray-100 transition">
-            Analysis
-            <svg class="w-4 h-4 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
-            </svg>
-          </button>
-          <ul id="dropdownMenu" class="absolute left-0 mt-2 w-56 bg-white shadow-lg rounded border border-gray-200 hidden z-50">
-            <li>
-              <a href="/pages/activity_percentage.php" class="block px-4 py-3 text-gray-700 hover:bg-gray-100 transition">
-                Activity Percentage
-              </a>
-            </li>
-            <li>
-              <a href="/pages/duration.php" class="block px-4 py-3 text-gray-700 hover:bg-gray-100 transition">
-                Duration
-              </a>
-            </li>
-            <li>
-              <a href="/pages/emotion_explicit_compare.php" class="block px-4 py-3 text-gray-700 hover:bg-gray-100 transition">
-                Emotion vs Explicit
-              </a>
-            </li>
-            <li>
-              <a href="/pages/genre_prediction.php" class="block px-4 py-3 text-gray-700 hover:bg-gray-100 transition">
-                Genre Prediction
-              </a>
-            </li>
-          </ul>
-        </li>
-        <li>
-          <a href="/pages/recommendation.php" class="text-gray-700 font-medium px-4 py-2 rounded hover:bg-gray-100 transition">
-            Recommendation
-          </a>
-        </li>
-      </ul>
-    </div>
-  </nav>
   <section class="text-center py-10 bg-blue-100">
     <h2 class="text-3xl font-semibold mb-2">Welcome to the Spotify OLAP Project</h2>
     <p class="text-gray-700">Analyze Spotify data and get personalized recommendations.</p>
