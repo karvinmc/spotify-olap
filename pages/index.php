@@ -1,7 +1,8 @@
 <?php
 include '../includes/app.php';
 include '../includes/database.php';
-include '../includes/mongodb.php';?>
+include '../includes/mongodb.php';
+?>
 
 
 <!DOCTYPE html>
@@ -25,7 +26,7 @@ include '../includes/mongodb.php';?>
     </div>
   </section>
   <section class="grid grid-cols-1 md:grid-cols-2 gap-4 p-6 max-w-5xl mx-auto">
-    <a href="#" class="bg-white p-8 rounded shadow hover:shadow-md text-center">
+    <a href="/pages/olap_analysis.php" class="bg-white p-8 rounded shadow hover:shadow-md text-center">
       <h4 class="font-semibold text-blue-600">OLAP Analysis</h4>
       <p class="text-sm mt-2">Explore trends by genre, artist, and year.</p>
     </a>
@@ -35,23 +36,7 @@ include '../includes/mongodb.php';?>
     </a>
   </section>
 
-  <!-- Custom JS -->
-  <script>
-    const dropdownBtn = document.getElementById('dropdownBtn');
-    const dropdownMenu = document.getElementById('dropdownMenu');
-
-    dropdownBtn.addEventListener('click', (e) => {
-      e.stopPropagation(); // prevent event from bubbling to document
-      dropdownMenu.classList.toggle('hidden');
-    });
-
-    // Close dropdown when clicking outside
-    document.addEventListener('click', (e) => {
-      if (!dropdownMenu.contains(e.target) && !dropdownBtn.contains(e.target)) {
-        dropdownMenu.classList.add('hidden');
-      }
-    });
-  </script>
+  
 </body>
 
 </html>

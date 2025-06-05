@@ -3,7 +3,6 @@ include '../includes/app.php';
 include '../includes/database.php';
 include '../includes/mongodb.php';
 
-// 📝 Define available activity fields
 $activities = [
   'Good for Party',
   'Good for Work/Study',
@@ -16,7 +15,6 @@ $activities = [
   'Good for Morning Routine'
 ];
 
-// 📥 Handle user input
 $selected = $_GET['activity'] ?? null;
 ?>
 
@@ -54,7 +52,6 @@ $selected = $_GET['activity'] ?? null;
       <h2 class="text-2xl font-semibold mb-4">Genre Prediction for: <span class="text-blue-600"><?= htmlspecialchars($selected) ?></span></h2>
 
       <?php
-      // 🧪 MongoDB Aggregation
       $pipeline = [
         ['$match' => [$selected => 1]],
         ['$group' => ['_id' => '$Genre', 'count' => ['$sum' => 1]]],
@@ -79,29 +76,13 @@ $selected = $_GET['activity'] ?? null;
         }
         echo "</tbody></table></div>";
       } catch (Exception $e) {
-        echo "<p class='text-red-600 font-semibold'>❌ Query failed: " . htmlspecialchars($e->getMessage()) . "</p>";
+        echo "<p class='text-red-600 font-semibold'> Query failed: " . htmlspecialchars($e->getMessage()) . "</p>";
       }
       ?>
     <?php endif; ?>
   </div>
 
-  <!-- Custom JS -->
-  <script>
-    const dropdownBtn = document.getElementById('dropdownBtn');
-    const dropdownMenu = document.getElementById('dropdownMenu');
 
-    dropdownBtn.addEventListener('click', (e) => {
-      e.stopPropagation(); // prevent event from bubbling to document
-      dropdownMenu.classList.toggle('hidden');
-    });
-
-    // Close dropdown when clicking outside
-    document.addEventListener('click', (e) => {
-      if (!dropdownMenu.contains(e.target) && !dropdownBtn.contains(e.target)) {
-        dropdownMenu.classList.add('hidden');
-      }
-    });
-  </script>
 </body>
 
 </html>

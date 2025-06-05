@@ -10,7 +10,7 @@ try {
     'authSource' => 'admin'
   ]);
 
-  $resto = $client->restaurant->restaurants;
+  $collection = $client->spotify->spotify;
 } catch (Exception $e) {
   die("Database error: " . $e->getMessage());
 }

@@ -21,7 +21,6 @@ ini_set('memory_limit', '-1');
     <h1 class="text-3xl font-bold mb-6 text-center">Duration vs Popularity & Energy</h1>
 
     <?php
-    // Step 1: Get all durations and convert to seconds
     $durationQuery = "SELECT Length FROM Songs ORDER BY Length";
     $durationResult = mysqli_query($conn, $durationQuery);
 
@@ -54,7 +53,6 @@ ini_set('memory_limit', '-1');
 
     echo "<p class='mb-6 text-lg'>🧮 Median Duration: <strong class='text-blue-600'>$medianTimeFormatted</strong> (in seconds: <strong class='text-blue-600'>$medianSeconds</strong>)</p>";
 
-    // Step 3: Group songs above and below median
     $mainQuery = "
         SELECT 
             CASE WHEN TIME_TO_SEC(Length) > $medianSeconds THEN 'Above Median' ELSE 'Below or Equal Median' END AS DurationGroup,
@@ -67,7 +65,6 @@ ini_set('memory_limit', '-1');
 
     $mainResult = mysqli_query($conn, $mainQuery);
 
-    // Step 4: Display the result
     echo "<div class='overflow-x-auto'>
             <table class='min-w-full bg-white border border-gray-200 rounded-lg'>
                 <thead class='bg-gray-200 text-left'>
@@ -97,23 +94,6 @@ ini_set('memory_limit', '-1');
     ?>
   </div>
 
-  <!-- Custom JS -->
-  <script>
-    const dropdownBtn = document.getElementById('dropdownBtn');
-    const dropdownMenu = document.getElementById('dropdownMenu');
-
-    dropdownBtn.addEventListener('click', (e) => {
-      e.stopPropagation(); // prevent event from bubbling to document
-      dropdownMenu.classList.toggle('hidden');
-    });
-
-    // Close dropdown when clicking outside
-    document.addEventListener('click', (e) => {
-      if (!dropdownMenu.contains(e.target) && !dropdownBtn.contains(e.target)) {
-        dropdownMenu.classList.add('hidden');
-      }
-    });
-  </script>
 </body>
 
 </html>

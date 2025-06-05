@@ -8,9 +8,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
-  
-</body>
-</html>
+  </html>
 <nav class="bg-white shadow px-6 py-4">
     <div class="max-w-7xl mx-auto flex justify-center items-center">
       <ul class="flex gap-6 items-center relative">
@@ -54,6 +52,30 @@
             Recommendation
           </a>
         </li>
+        <li>
+          <a href="/pages/olap_analysis.php"class="text-gray-700 font-medium px-4 py-2 rounded hover:bg-gray-100 transition">
+            olap analysis</a>
+        </li>
       </ul>
     </div>
   </nav>
+
+  <!-- Custom JS -->
+  <script>
+    const dropdownBtn = document.getElementById('dropdownBtn');
+    const dropdownMenu = document.getElementById('dropdownMenu');
+
+    dropdownBtn.addEventListener('click', (e) => {
+      e.stopPropagation(); // prevent event from bubbling to document
+      dropdownMenu.classList.toggle('hidden');
+    });
+
+    // Close dropdown when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!dropdownMenu.contains(e.target) && !dropdownBtn.contains(e.target)) {
+        dropdownMenu.classList.add('hidden');
+      }
+    });
+  </script>
+  
+</body>
