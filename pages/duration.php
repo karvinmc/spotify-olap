@@ -14,6 +14,7 @@ ini_set('memory_limit', '-1');
   <meta charset="UTF-8">
   <title>Duration vs Popularity & Energy</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
 <body class="bg-gray-100 text-gray-900">

@@ -35,8 +35,6 @@ include '../includes/mongodb.php';
       <p class="text-sm mt-2">Get song suggestions based on input filters.</p>
     </a>
   </section>
-
-  
 </body>
 
 </html>
